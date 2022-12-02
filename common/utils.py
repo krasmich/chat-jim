@@ -6,19 +6,21 @@ from decor import log
 
 
 @log
-def receive_message(sock):
+def receive_message(client):
     """
     Функция приёма и декодирования сообщения
     принимает байты выдаёт словарь, если принято что-то другое отдаёт ошибку значения
     """
-    encoded_response = sock.recv(MAX_PACKAGE_LENGTH)
+    encoded_response = client.recv(MAX_PACKAGE_LENGTH)
     if isinstance(encoded_response, bytes):
         json_response = encoded_response.decode(ENCODING)
         response = json.loads(json_response)
         if isinstance(response, dict):
             return response
+        else:
+            raise IncorrectDataRecivedError
+    else:
         raise IncorrectDataRecivedError
-    raise IncorrectDataRecivedError
 
 
 @log

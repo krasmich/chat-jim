@@ -1,7 +1,7 @@
 import logging
 
 
-DEFAULT_PORT = 7779
+DEFAULT_PORT = 7770
 DEFAULT_IP_ADDRESS = '127.0.0.1'
 MAX_CONNECTIONS = 5
 MAX_PACKAGE_LENGTH = 1024
@@ -13,7 +13,7 @@ ACTION = 'action'
 TIME = 'time'
 USER = 'user'
 ACCOUNT_NAME = 'account_name'
-SENDER = 'sender'
+SENDER = 'from'
 DESTINATION = 'to'
 
 

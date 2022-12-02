@@ -3,13 +3,13 @@ import os
 import logging
 import logging.handlers
 from common.variables import LOGGING_LEVEL
-# sys.path.append('../../')
+sys.path.append('../../')
 
 
 format_server = logging.Formatter('%(asctime)s %(levelname)s %(filename)s %(message)s')
 
 
-path = 'D:/GB/3_quarter/Databases_and_PyQT/client-server-jim/log/log_files'
+path = os.path.dirname(os.path.abspath(__file__))
 path = os.path.join(path, 'server.log')
 
 
